@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+ </head>
+<style>
+     .card {
+    padding:10px;
+    transition:transform o.2s
+    width:15%;
+    height:200px;
+    margin-top:20px;
+    border-color:black;
+    opacity:1;
+}
+.centered {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+  }
+    .card:hover {
+  border-width:2px;
+  opacity:1;
+ -ms-transform:scale(1);
+ transform:scale(1.03);
+
+}
+ .circle-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+}
+</style>
+<body style = "background-color:black">
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <img src="{{ obj.image.url}}" alt="Profile Image" class="circle-image">
+     <p style="color:brown;font-size:18px;margin-bottom:1px;margin-left:5px;font-family:bold">{{ obj.email}}</p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="container-fluid"><p class="h5" style="margin-left:60px;font-family:bold;font-weight:bold;font-size:30px">OPEN<span style="color:brown;font-size:30px">  LIBRARY</span><ion-icon name="book-outline" style="color:brown;font-size:30px;top:20px"></ion-icon></p>
+        <div class="container-fluid">
+            <p class="text-end"></p>
+            <ul class="navbar-nav" style="margin-left:0.5px">
+                <button type="button" class="btn btn-secondary" style="background-color:white;color:grey;margin-left:290px">search</button>
+            <a style="font-size:small;color:brown;margin-left:10px;font-family:bold" class="nav-link active"><b>HOME</b></a>
+            </li>
+            <li class="nav-item">
+            <a style="font-size:small;color:brown;font-family:bold"class="nav-link active"><b>WHISLIST</b></a>
+            </li>
+            <li class="nav-item">
+            <a style="font-size:small;color:brown;font-family:bold"class="nav-link active"><b>MYORDERS</b></a>
+            </li>
+            <li class="nav-item">
+            <a style="font-size:small;color:brown;font-family:bold"class="nav-link active"><b>MYACCOUNT</b></a>
+            </li>
+            <li class="nav-item">
+            <a style="font-size:small;color:brown;font-family:bold"class="nav-link active"><b>LOGIN</b></a>
+            </li>
+             <a href ="/login/"><input style="background-color:black;color:white;margin-left:8px;top:50px;border-radius:20%" type="submit" value ="Logout"></a>
+                 <a href ="/content"><input style="background-color:black;color:white;margin-left:8px;border-radius:20%" type="submit" value ="+"></a>
+            <div class="container">
+          </ul>
+        </div></nav>
+<div style="height:100px;width:1520px;background-color:black"><p class="h4" style="color:white;font-family:bold;font-weight:bold">OPEN<span style="color:brown;font-family:bold;font-weight:bold">  LIBRARY</span></p><h2 style="color:white;font-family:bold">From Cover to Cover:The Essential Book List</h2></div>
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <div style="color:black;font-size:30px;top:120px;font-family:bold" class="centered">Welcome, {{ obj.name }}!</div>
+      <img src="{%static 'Book 2.jpg'%}"  style="width:1600px;height:500px">
+      <div class="carousel-caption">
+          <div  style="font-size:200%;Color:black;font-weight:bold;top:5px;font-family:bold">"The Infinite Library: Explore, Discover, and Celebrate Books from Every Genre and Era"</div>
+      </div>
+    </div>
+    <div class="carousel-item">
+        <div style="color:black;font-size:30px;top:120px;font-family:bold" class="centered">Welcome, {{ obj.name }}!</div>
+      <img src="{%static 'Book 3.jpg'%}" style="width:1600px;height:500px">
+      <div class="carousel-caption">
+           <div  style="font-size:200%;Color:black;font-weight:bold;top:5px;font-family:bold">"A book is a dream that you hold in your hand"</div>
+      </div>
+      </div>
+
+    <div class="carousel-item">
+        <div style="color:black;font-size:30px;top:120px;font-family:bold" class="centered">Welcome, {{obj.name }}!</div>
+      <img src="{%static 'Book 4.jpg'%}"  style="width:1600px;height:500px">
+      <div class="carousel-caption">
+            <div  style="font-size:200%;Color:black;font-weight:bold;top:5px;font-family:bold">"So many books, so little time"</div>
+      </div>
+      </div>
+    </div>
+
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<div class="card-body">
+<div class="row">
+        {% for x in data %}
+    <div class="card" style ="width:280px;height:350px;margin-right:22px">
+              {{x.book_name}}[
+                {{x.author}}]
+                 {{x.price}}
+         <a href ="/viewmore/{{x.book_id}}"><input class="centered" style="top:330px" type="submit" value ="view More"></a>
+                  <img src="{{x.image.url}}" class="centered" style="width:250px;height:250px">
+    </div>
+        {% endfor %}
+</div>
+      </div>
+</body>
+</html>
+
+
